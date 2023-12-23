@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Interest calculator </title>
+        <style>
+             #calculator {
+            background-color: grey;
+            padding: 20px;
+            border-radius: 9px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+            .container{
+                background-color: grey;
+                padding:20px;
+                margin:200px; 
+                color: yellowgreen;
+            }
+        </style>
+        <script>
+            function populateDiv(){
+                const a=document.getElementById("p").value;
+                const b=document.getElementById("r").value;
+                const c=document.getElementById("t").value;
+                const element=document.getElementById("interest");
+                element.innerHTML= "Final Amout after the interest:   "+(parseInt(a)*parseInt(b)*parseInt(c))/100;
+            }
+        </script>
+    </head>
+    <body class="container" >
+        <centre id="calculator">
+                <div style="font-size: 20px;">
+                    <label for="p">Enter the principal amount:</label>
+                    <input  required oninput="populateDiv()" type="text" placeholder="principal amount" id="p" width="20px" height="20px"></input></br>
+                    <label for="r">Enter the rate of interest in %age:</label>
+                    <input requried  oninput="populateDiv()" type="text" placeholder="rate of interest" id="r" width="20px" height="20px"> </input></br>
+                    <label for="t" >Enter the duration in years:</label>
+                    <input requried oninput="populateDiv()" type="text" placeholder="time" id="t" width="20px" height="20px"> </input></br>
+                </div>
+        </centre>
+        <div style="display:flex;justify-content:center;color: black;" id="interest"></div>
+    </body>
+</html>
